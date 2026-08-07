@@ -15,6 +15,11 @@
   a { color: #0b57d0; text-decoration: none; }
   a:hover { text-decoration: underline; }
   main { max-width: 42rem; margin: 0 auto; padding: 4rem 1.5rem 3rem; }
+  header .avatar {
+    width: 128px; height: 128px; border-radius: 50%; object-fit: cover;
+    display: block; margin-bottom: 1.1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  }
   header h1 { font-size: 2.1rem; font-weight: 650; margin: 0; letter-spacing: 0.01em; }
   header p.tagline { margin: 0.4rem 0 0; font-size: 1.05rem; opacity: 0.75; }
   section { margin-top: 2.6rem; }
@@ -36,6 +41,7 @@
 <body>
 <main>
   <header>
+    <img class="avatar" src="arka.jpg" alt="Arka Jain" width="128" height="128">
     <h1>Arka Jain</h1>
     <p class="tagline">High school senior, Class of 2027 &middot; New Jersey &middot; aiming at mechanical &amp; aerospace engineering</p>
   </header>
