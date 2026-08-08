@@ -107,6 +107,26 @@
   .clipcard iframe { width: 250px; aspect-ratio: 9 / 16; border: 0; border-radius: 8px; display: block; }
   .clipcard.feature { border-color: rgba(245,176,76,0.5); }
 
+  /* contact form */
+  .contact-form { margin-top: 1.1rem; }
+  .contact-form .hp { display: none; }
+  .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+  @media (max-width: 700px) { .fields { grid-template-columns: 1fr; } }
+  .fields label {
+    display: flex; flex-direction: column; gap: 0.35rem;
+    font-size: 0.85rem; color: var(--muted);
+  }
+  .fields .full { grid-column: 1 / -1; }
+  .fields input, .fields textarea {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.6rem 0.75rem; color: var(--text);
+    font: inherit; font-size: 0.95rem;
+  }
+  .fields input:focus, .fields textarea:focus {
+    outline: none; border-color: var(--brass);
+  }
+  .contact-form .btn { margin-top: 1rem; cursor: pointer; font-family: inherit; }
+
   footer {
     margin-top: 4.5rem; padding-top: 1.4rem; border-top: 1px solid var(--border);
     color: var(--muted); font-size: 0.88rem;
@@ -128,7 +148,7 @@
         <a class="btn primary" href="https://github.com/arkajain27">GitHub</a>
         <a class="btn" href="https://arxiv.org/abs/2604.02511">Preprint</a>
         <a class="btn" href="https://github.com/arkajain27/RocketLab">RocketLab</a>
-        <a class="btn" href="mailto:arkajain27@gmail.com">Email</a>
+        <a class="btn" href="#contact">Contact</a>
       </div>
     </div>
   </div>
@@ -246,6 +266,34 @@
                 title="Trumpet audition - Dwight Global Concert selection, September 2025" loading="lazy"
                 allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
       </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <p class="eyebrow">04 &mdash; Contact</p>
+    <div class="card wide">
+      <h3>Send me a note</h3>
+      <p>Questions about the projects, the research, or the music &mdash;
+      the form below reaches me directly.</p>
+      <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
+        <input type="hidden" name="subject" value="Message from arkajain.com">
+        <input type="hidden" name="from_name" value="arkajain.com contact form">
+        <input type="hidden" name="redirect" value="https://arkajain.com/thanks.html">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+        <div class="fields">
+          <label>Your name
+            <input type="text" name="name" required autocomplete="name">
+          </label>
+          <label>Your email
+            <input type="email" name="email" required autocomplete="email">
+          </label>
+          <label class="full">Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+        </div>
+        <button class="btn primary" type="submit">Send</button>
+      </form>
     </div>
   </section>
 
